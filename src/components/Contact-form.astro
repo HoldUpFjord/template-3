@@ -1,0 +1,97 @@
+<section class="w-full min-h-screen bg-base-200 py-12">
+
+    <div x-data="{
+        formData: {
+            name: '',
+            email: '',
+            message: ''
+        },
+        loading: false,
+        success: false,
+        error: null,
+        submitForm() {
+            this.loading = true;
+            this.error = null;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                if (this.formData.email && this.formData.message) {
+                    this.success = true;
+                    this.formData = { name: '', email: '', message: '' };
+                } else {
+                    this.error = 'Please fill all required fields';
+                }
+                this.loading = false;
+            }, 1000);
+        }
+    }">
+    <div class="max-w-4xl mx-auto px-4">
+        <form 
+          @submit.prevent="submitForm()"
+          class="w-full flex flex-col items-center gap-6 bg-base-100 p-8 rounded-lg shadow-lg"
+        ><div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Name</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            x-model="formData.name"
+                            class="input input-bordered" 
+                            placeholder="Your name"
+                        />
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Email</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            x-model="formData.email"
+                            class="input input-bordered" 
+                            placeholder="your@email.com"
+                            required
+                        />
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Message</span>
+                        </label>
+                        <textarea 
+                            x-model="formData.message"
+                            class="textarea textarea-bordered h-24" 
+                            placeholder="Your message..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button 
+                        type="submit" 
+                        class="btn btn-primary"
+                        :disabled="loading"
+                    >
+                        <span x-show="!loading">Send Message</span>
+                        <span x-show="loading">Sending...</span>
+                    </button>
+
+                    <div 
+                        x-show="success" 
+                        class="alert alert-success"
+                        x-transition
+                    >
+                        Message sent successfully!
+                    </div>
+
+                    <div 
+                        x-show="error" 
+                        class="alert alert-error"
+                        x-transition
+                    >
+                        <span x-text="error"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
