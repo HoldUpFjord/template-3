@@ -1,4 +1,4 @@
-<section class="w-full min-h-screen bg-base-200 py-12">
+<section class="w-full min-h-screen flex flex-col bg-base-200 py-12">
 
     <div x-data="{
         formData: {
@@ -9,13 +9,36 @@
         loading: false,
         success: false,
         error: null,
+
+     validateEmail(email) {
+        const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return regex.test(email);
+    
+    },
+
+    validateForm() {
+        if (!this.formData.name.trim()) {
+            this.error = 'Name is required';
+            return false;
+        }
+        if (!this.validateEmail(this.formData.email)) {
+            this.error = 'Please enter a valid email address';
+            return false;
+        }
+        if (!this.formData.message.trim()) {
+            this.error = 'Message is required';
+            return false;
+        }
+        return true;
+    },
+
         submitForm() {
             this.loading = true;
             this.error = null;
             
             // Simulate form submission
             setTimeout(() => {
-                if (this.formData.email && this.formData.message) {
+                if (this.formData.email && this.formData.message && this.formData.name) {
                     this.success = true;
                     this.formData = { name: '', email: '', message: '' };
                 } else {
@@ -28,8 +51,9 @@
     <div class="max-w-4xl mx-auto px-4">
         <form 
           @submit.prevent="submitForm()"
-          class="w-full flex flex-col items-center gap-6 bg-base-100 p-8 rounded-lg shadow-lg"
-        ><div class="form-control">
+          class=" items-center gap-6 bg-base-100 p-8 rounded-lg shadow-lg"
+        >
+            <div class="form-control">
                         <label class="label">
                             <span class="label-text">Name</span>
                         </label>
@@ -80,8 +104,8 @@
                         class="alert alert-success"
                         x-transition
                     >
-                        Message sent successfully!
-                    </div>
+                    <strong x-text="email"></strong> Your message has been sent successfully!
+                </div>
 
                     <div 
                         x-show="error" 
@@ -95,3 +119,4 @@
         </div>
     </div>
 </section>
+
