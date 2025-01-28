@@ -3,15 +3,25 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import CardImage from '../components/Card-Image.astro';
 import CardImageReverse from '../components/Card-Image-Reverse.astro';
+import Header from '../components/Header.astro';
 ---
 
 <Layout>
+  <Header></Header>
   <main class="container mx-auto px-4 py-8">
     <h1 class="text-base md:text-xl lg:text-2xl"> <strong>Services</strong></h1>
       <div class="container flex flex-col justify-center">
-        <Card>
+        <CardImage
+        task="Dance"
+        description="Boogie down"
+        image="https://plus.unsplash.com/premium_photo-1668686288845-5e9897b27533?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        >
         </Card>
-        <CardImageReverse/>
+        <CardImageReverse 
+        task="Twerk" 
+        description="yoyoyoyo" 
+        image="https://images.unsplash.com/photo-1622205652592-708f00f8164c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
       </div>
   </main>
 </Layout>
