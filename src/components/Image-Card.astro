@@ -1,11 +1,11 @@
 ---
-const { task, description, image } = Astro.props;
+const { task, image } = Astro.props;
 import Divider from "./Divider.astro";
 
 ---
-<div class="group flex flex-col justify-center my-2 items-center mr-40">
+<div class="group flex flex-col justify-center my-2 items-center">
  <div class="card-image bg-primary"> 
-    <figure class="w-64 h-96 overflow-hidden"> <!-- 2:3 portrait ratio -->
+    <figure class="w-80 h-[30rem] overflow-hidden"> <!-- 2:3 portrait ratio -->
         <img 
             src={image} 
             alt="activity image" 
