@@ -1,19 +1,20 @@
 ---
 const { task, image } = Astro.props;
-import Divider from "./Divider.astro";
+
 
 ---
 <div class="group flex flex-col justify-center my-2 items-center">
- <div class="card-image bg-primary"> 
-    <figure class="w-80 h-[30rem] overflow-hidden"> <!-- 2:3 portrait ratio -->
+    <div class="card-image bg-primary"> 
+      <figure class="w-80 h-[30rem] overflow-hidden">
         <img 
-            src={image} 
-            alt="activity image" 
-            class="w-full h-full object-cover transition-all duration-300 ease-in-out hover:opacity-65 hover:scale-110 transform"
+          src={image} 
+          alt="activity image" 
+          class="w-full h-full object-cover transition-all duration-300 ease-in-out hover:opacity-65 hover:scale-110 transform"
         />
-    </figure>
-</div>
-    <div class="w-64 flex justify-start">
-        <p class="text-2xl font-bold transition-all duration-300 group-hover:text-primary">{task}</p>
+      </figure>
     </div>
-</div>
+    <!-- Adjust width to match figure width and align content to start -->
+    <div class="w-80 flex justify-start mt-4">
+      <p class="text-2xl font-bold transition-all duration-300 group-hover:text-primary">{task}</p>
+    </div>
+  </div>

@@ -1,0 +1,13 @@
+---
+const {img, review, reviewer, reviewSource} = Astro.props;
+
+---
+
+<li class="card bg-base-100 shadow-xl flex flex-col bg-base-200 w-96 h-96 m-10 p-10 border-radius-0">
+    <div class="w-full flex justify-start ml-5">
+        <img src='/src/assets/bluequote.png' alt="quote" class="w-10 h-10"/>
+    </div>
+    <p class="m-5">{review}</p>
+    <span class="font-bold text-xl mx-5 mt-5">{reviewer}</span>
+    <span class="mx-5">{reviewSource}</span>
+</li>
