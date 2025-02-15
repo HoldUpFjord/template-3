@@ -1,13 +1,25 @@
 ---
-const {img, review, reviewer, reviewSource} = Astro.props;
-
+const { review, reviewer, reviewSource } = Astro.props;
 ---
 
-<li class="card bg-base-100 shadow-xl flex flex-col bg-base-200 w-96 h-96 m-10 p-10 border-radius-0">
+<li
+  class="card block bg-base-100 shadow-xl flex flex-col bg-base-200 w-96 h-96 m-10 p-10"
+>
+  <div class="flex flex-col h-full">
     <div class="w-full flex justify-start ml-5">
-        <img src='/src/assets/bluequote.png' alt="quote" class="w-10 h-10"/>
+      <img src="/src/assets/bluequote.png" alt="quote" class="w-10 h-10" />
     </div>
-    <p class="m-5">{review}</p>
-    <span class="font-bold text-xl mx-5 mt-5">{reviewer}</span>
-    <span class="mx-5">{reviewSource}</span>
+
+    <p
+      class="m-5 overflow-y-auto md:overflow-hidden text-ellipsis line-clamp-4"
+    >
+      {review}
+    </p>
+
+    <div class="mt-auto">
+      <!-- Push to bottom of card -->
+      <span class="font-bold text-xl mx-5 mt-5 block">{reviewer}</span>
+      <span class="mx-5 block">{reviewSource}</span>
+    </div>
+  </div>
 </li>

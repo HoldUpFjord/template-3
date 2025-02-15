@@ -2,18 +2,18 @@
 import ImageCard from "./Image-Card.astro";
 ---
 
-<section class="flex-col h-7/10 m-32">
-  <div class="flex flex-col lg:flex-row my-12 mr-12">
-    <div class="w-1/2">
-      <h2 class="text-4xl font-bold">Our Services</h2>
-      <p class="text-xl">
+<section class="flex-col h-7/10 m:20 ml-10 xl:m-32">
+  <div class="flex flex-col items-center lg:flex-start lg:flex-row my-12 mr-12">
+    <div class="lg:w-1/2 flex flex-col justify-center items-center">
+      <h2 class="text-lg lg:text-4xl font-bold">Our Services</h2>
+      <p class="text-3xl md:text-xl text-center font-bold">
         We offer a wide range of services to meet your needs.
       </p>
     </div>
-    <div class="w-1/2">
+    <div class="lg:w-1/2">
       <div class="flex flex-row">
         <div class="flex-end">
-          <p>
+          <p class="text-center md:text-start">
             In addition to house painting, we also offer painting services for
             commercial properties throughout the area. From offices and retail
             spaces to HOAs and other commercial buildings, we're experienced in
@@ -28,7 +28,9 @@ import ImageCard from "./Image-Card.astro";
       </div>
     </div>
   </div>
-  <div class="grid grid-cols-4 gap-y-4 flex items-center mx-50">
+  <div
+    class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-y-4 flex items-center mr-10 md:mx-50"
+  >
     <ImageCard
       task="Interior Painting"
       image="https://plus.unsplash.com/premium_photo-1668686288845-5e9897b27533?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

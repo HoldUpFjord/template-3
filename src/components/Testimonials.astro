@@ -1,41 +1,45 @@
 ---
-import TestemonialCard from "./Testemonial-Card.astro"
+import TestemonialCard from "./Testemonial-Card.astro";
 ---
-<section >
-    <div class="flex flex-col justify-center items-center my-12">
-        <span class="text-xl font-bold text-primary flex-wrap">Testimonials</span>
-        <h2 class="text-3xl font-bold text-center max-w-2xl"> <!-- Changed classes -->
-            Trusted By Businesses 
-            <br /> <!-- Fixed br tag -->
-            And Homeowners Across The Area
-        </h2>
-        <p class="w-96 text-center">We we take pride in the lasting relationships we've built with our clients over the years. Our commitment to quality and customer service is reflected in the positive feedback we consistently receive. From homeowners to contractors, our clients appreciate our attention to detail, professionalism, and ability to exceed expectations.</p>
-    </div>
 
-    <ul class="flex flex-row justify-center items-center ">
-        <!-- pass in card props -->
-        <TestemonialCard
-        img=""
-        review="We are so happy with the work that was done on our house. The team was professional and did a great job. We would highly recommend them to anyone looking for a painting company."
-        reviewer="John Doe"
-        reviewSource="Google Reviews"
-        >
-        </TestemonialCard>
-        <TestemonialCard
-        img=""
-        review="We are so happy with the work that was done on our house. The team was professional and did a great job. We would highly recommend them to anyone looking for a painting company."
-        reviewer="John Doe"
-        reviewSource="Google Reviews"
-        >
-        </TestemonialCard>
-        <TestemonialCard
-        img=""
-        review="We are so happy with the work that was done on our house. The team was professional and did a great job. We would highly recommend them to anyone looking for a painting company."
-        reviewer="John Doe"
-        reviewSource="Google Reviews"
-        >
-        </TestemonialCard>
+<section>
+  <div class="flex flex-col justify-center items-center my-12">
+    <span class="text-xl font-bold text-primary flex-wrap">Testimonials</span>
+    <h2 class="text-3xl font-bold text-center max-w-2xl">
+      <!-- Changed classes -->
+      Trusted By Businesses
+      <br />
+      <!-- Fixed br tag -->
+      And Homeowners Across The Area
+    </h2>
+    <p class="w-96 text-center">
+      We we take pride in the lasting relationships we've built with our clients
+      over the years. Our commitment to quality and customer service is
+      reflected in the positive feedback we consistently receive. From
+      homeowners to contractors, our clients appreciate our attention to detail,
+      professionalism, and ability to exceed expectations.
+    </p>
+  </div>
 
-        
-    </ul>
+  <ul class="flex flex-col lg:flex-row justify-center items-center">
+    <!-- pass in card props -->
+    <TestemonialCard
+      img=""
+      review="We are so happy with the work that was done on our house. The team was professional and did a great job. We would highly recommend them to anyone looking for a painting company."
+      reviewer="John Doe"
+      reviewSource="Google Reviews"
+    />
+    <TestemonialCard
+      img=""
+      review="We are so happy with the work that was done on our house. The team was professional and did a great job. We would highly recommend them to anyone looking for a painting company."
+      reviewer="John Doe"
+      reviewSource="Google Reviews"
+    />
+    <TestemonialCard
+      img=""
+      review="We are so happy with the work that was done on our house. The team was professional and did a great job. We would highly recommend them to anyone looking for a painting company."
+      reviewer="John Doe"
+      reviewSource="Google Reviews"
+    />
+  </ul>
 </section>
